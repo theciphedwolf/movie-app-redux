@@ -7,7 +7,6 @@ import { getPopularMovies } from "./actions/movieActions";
 function App({ genres, movies, getPopularMovies, getGenres }) {
   useEffect(() => {
     getGenres();
-    getPopularMovies();
   });
 
   return <div className="App"></div>;

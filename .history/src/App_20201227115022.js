@@ -7,7 +7,6 @@ import { getPopularMovies } from "./actions/movieActions";
 function App({ genres, movies, getPopularMovies, getGenres }) {
   useEffect(() => {
     getGenres();
-    getPopularMovies();
   });
 
   return <div className="App"></div>;
@@ -18,4 +17,4 @@ const mapStateToProps = (state) => ({
   movies: state.movies,
 });
 
-export default connect(mapStateToProps, { getGenres, getPopularMovies })(App);
+export default connect(mapStateToProps, { getGenres })(App);

@@ -14,8 +14,8 @@ function App({ genres, movies, getPopularMovies, getGenres }) {
 }
 
 const mapStateToProps = (state) => ({
-  genres: state.genres,
-  movies: state.movies,
+  genres: state.genres.genres,
+  movies: state.movies.movies,
 });
 
 export default connect(mapStateToProps, { getGenres, getPopularMovies })(App);

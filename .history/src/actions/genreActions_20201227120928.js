@@ -1,0 +1,17 @@
+import { GET_GENRES } from "./types";
+
+export const getGenres = () => async (dispatch) => {
+  try {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_MDB_APIKEY}&language=en-US`
+    );
+    const data = await res.json();
+
+    console.log(data);
+
+    dispatch({
+      type: GET_GENRES,
+      payload: data,
+    });
+  } catch (err) {}
+};

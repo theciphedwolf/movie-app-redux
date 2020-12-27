@@ -13,7 +13,10 @@ function App({ genres, movies, getPopularMovies, getGenres }) {
   return <div className="App"></div>;
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => (
+  console.log(state);
+  {
+  
   genres: state.genres,
   movies: state.movies,
 });

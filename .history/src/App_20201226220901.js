@@ -1,21 +1,19 @@
+import logo from "./logo.svg";
 import "./App.css";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import { getGenres } from "./actions/genreActions";
-import { getPopularMovies } from "./actions/movieActions";
 
-function App({ genres, movies, getPopularMovies, getGenres }) {
+function App({ log: { logs, loading }, getGenres }) {
   useEffect(() => {
     getGenres();
-    getPopularMovies();
   });
 
   return <div className="App"></div>;
 }
 
 const mapStateToProps = (state) => ({
-  genres: state.genres,
-  movies: state.movies,
+  log: state.log,
 });
 
-export default connect(mapStateToProps, { getGenres, getPopularMovies })(App);
+export default connect(mapStateToProps, { getGenres })(App);

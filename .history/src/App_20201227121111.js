@@ -14,6 +14,7 @@ function App({ genres, movies, getPopularMovies, getGenres }) {
 }
 
 const mapStateToProps = (state) => ({
+  console.log(state);
   genres: state.genres,
   movies: state.movies,
 });
